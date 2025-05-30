@@ -39,6 +39,7 @@ void new_snake_position(vector<pair<int8_t, int8_t>>& old_snake_position, int8_t
 }
 void write(vector<pair<int8_t, int8_t>>& snake_position, pair<int8_t, int8_t>&fruit)
 {
+    cout << "Your points:  "<< (snake_position.size()-1) *10 << "\n";
     int8_t screen[72][27]; //lenght and width walls included
     for(int i=0; i<72; i++)
     {
@@ -102,7 +103,7 @@ void setup()
     bool is_eaten=0;
     int8_t snake_direction=-1;
     pair<int8_t, int8_t>fruit_position=generate_fruit();
-
+    cout << "Press any arrow to continue:" << endl;
     while(snake_direction==-1)
         {
             if(GetKeyState(VK_UP) & 0x8000)
@@ -155,10 +156,18 @@ void setup()
             system("cls");
             write(snake,fruit_position);
         }
+    cout << "Congratulations! You have scored " << (snake.size()-1)*10 << " points";
 }
 
 int main()
 {
-    setup();
+    char cont='x';
+    while(cont!='n' or cont!='N')
+        {
+            setup();
+            cout << endl << "Do you want to continue? [y/n]";
+            cin >> cont;
+        }
+
     return 0;
 }
