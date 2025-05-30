@@ -18,4 +18,4 @@ To compile and run the project locally:
 ### Compilation
 
 ```bash
-g++ snake.cpp -o snake.exe
+g++ snake.cpp
