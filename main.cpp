@@ -162,7 +162,7 @@ void setup()
 int main()
 {
     char cont='x';
-    while(cont!='n' or cont!='N')
+    while(cont!='n' and cont!='N')
         {
             setup();
             cout << endl << "Do you want to continue? [y/n]";
